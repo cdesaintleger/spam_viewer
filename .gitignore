@@ -1,0 +1,16 @@
+*.xml
+nbproject/
+*.csv
+*~
+.settings
+.buildpath
+.cache
+.project
+.externalToolBuilders
+.DS_Store
+access_log
+html/Medias/
+html/dewplayer/
+*.komodoproject
+application/config/my_config.php
+application/config/cronjob_config.php

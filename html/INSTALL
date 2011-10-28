@@ -1,0 +1,49 @@
+Procédure d'installation :
+
+______________________
+                      |
+A : Modifications SQL |
+______________________|
+
+
+A.1 ---------> SQL , modifiez votre base d'amavis , en ajoutant  la table "toRelease" de la base Amavis ( serveur Anti-spam )
+
+
+
+    /*********** CODE SQL ****************
+
+    /*
+     * CREATE TABLE  `amavis`.`toRelease` (
+        `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+        `mail_id` VARCHAR( 100 ) NOT NULL ,
+        `quar_loc` VARCHAR( 100 ) NOT NULL ,
+        `released` INT NOT NULL ,
+        `dateToRelease` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,
+        INDEX (  `mail_id` ,  `released` ,  `dateToRelease` )
+        ) ENGINE = MYISAM ;
+     */
+
+    /****************************************
+
+
+
+
+
+
+A.2 ------------> SQL , modification de la table "mailbox" de la base "postfix" ( serveur de mails )
+
+
+
+
+    /*********** CODE SQL ****************
+
+    /*
+     *ALTER TABLE  `mailbox`
+        ADD  `showBlacklisted` BOOL NOT NULL
+        COMMENT  'si a 1 , les emails blacklistés ne seront pas pris en compte pour la notification par email';
+    */
+
+    /****************************************
+
+
+Ajout de params dans amavis.users

@@ -1,0 +1,18 @@
+<?php
+
+
+/*
+ * PARAMETRES CONNEXION A LA BASE AMAVIS (anti-spam)
+ */
+
+//non de la base de données d'amavis
+$_ddb       =   'amavis';
+//adresse du serveur de base de données
+$_host      =   '';
+//utilisateur pour se connecter à la base amavis
+$_user      =   '';
+//mot de passe pour se connecter à la base amavis
+$_pwd       =   '';
+
+
+?>

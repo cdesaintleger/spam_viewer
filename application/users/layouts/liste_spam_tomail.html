@@ -1,0 +1,27 @@
+
+<h2>Mail(s) bloqués sur votre compte : </h2>
+
+<h3>Note : </h3>
+<p><i>Visitez <a href="http://spamviewer.creavi.fr">SpamViewer</a> pour libérer un e-mail</i></p>
+<br>
+
+<table>
+
+    <tr class="entete">
+        <td><b>Time</b></td>
+        <td><b>Note</b></td>
+        <td><b>De</b></td>
+        <td><b>Sujet</b></td>
+    </tr>
+
+    {foreach from=$spam item=sp}
+    <tr>
+        <td width="160px">{$sp.time_iso}</td>
+        <td>{$sp.spam_level}</td>
+        <td>{$sp.from_addr}</td>
+        <td>{$sp.subject}</td>
+    </tr>
+    {/foreach}
+
+</table>
+

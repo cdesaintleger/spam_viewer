@@ -1,0 +1,24 @@
+h2{
+    font-family : Verdana, Arial, sans-serif;
+    font-size:12px;
+    color:#575757;
+}
+
+
+#bt_onoff{
+    width:95px;
+    height:26px;
+}
+
+.bt-onoff-1{
+    background: url(../../images/bt-on.png)top left no-repeat;
+}
+.bt-onoff-0{
+    background: url(../../images/bt-off.png)top left no-repeat;
+}
+
+
+div.slider { width:256px; margin:10px 0; background-color:#ccc; height:10px; position: relative; }
+div.slider div.handle { width:10px; height:15px; background-color:#f00; cursor:move; position: absolute; }
+
+div#zoom_element { width:50px; height:50px; background:#2d86bd; position:relative; }

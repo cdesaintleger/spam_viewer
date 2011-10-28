@@ -1,0 +1,76 @@
+<?php
+/**
+ * Fichier de configuration de spamViewer
+ *
+ */
+ //recupére l'instance du controller frontal
+$controller	=	Oscar_Front_Controller::getInstance();
+$controller->config =   array();
+
+
+
+
+
+/*
+ * PARAMETRES CONNEXION A LA BASE AMAVIS (anti-spam)
+ */
+
+//non de la base de données d'amavis
+$controller->set_param('_ddb','amavis');
+//adresse du serveur de base de données
+$controller->set_param('_host','');
+//utilisateur pour se connecter à la base amavis
+$controller->set_param('_user','');
+//mot de passe pour se connecter à la base amavis
+$controller->set_param('_pwd','');
+
+
+
+
+/*
+ * PARAMETRES CONNEXION AU SERVEUR DE MAIL
+ */
+
+//adresse ip du serveur de mail
+$controller->set_param('_mailsrvaddr','');
+//port ici imap , pour l'authentifacation
+$controller->set_param('_mailsrvport','143');
+//flags à utiliser , ici imap non crypté
+$controller->set_param('_mailsrvflag','imap/notls');
+//nom de la base de données de postfix
+$controller->set_param('_postfixDbName','');
+//utilisateur pour se connecter à la base amavis
+$controller->set_param('_postfixUser','');
+//mot de passe pour se connecter à la base amavis
+$controller->set_param('_postfixPwd','');
+
+
+/*
+ * PARAMETRES ENVOIES DE RAPPORTS AUX UTILISATEURS
+ */
+//adresse ip du serveur de mail pour l'envoie des rapports
+$controller->set_param('_repportsrvaddr','');
+//port d'envoi de mail 25
+$controller->set_param('_repportsrvport','25');
+//from , de qui vient le rapport
+$controller->set_param('_repportsrvfrom','Christophe <cdesaintleger@creavi.fr>',TRUE);
+//sujet du mail rapport
+$controller->set_param('_repportsrvsujet','Rapport de l\'anti spam');
+
+
+
+/*
+ * LISTE SPAMS
+ */
+
+//nombre de jours à afficher ( si 2 , affichage des spams des deux derniers jours )
+$controller->set_param('_joursavoir',3);
+//Type à extraire ex : "S","V","H"       correspondance :  V/B/S/s/M/H/O/C => virus/banned/spam(Kill)/spammy(tag)/bad-mime/bad-header/oversized/clean
+$controller->set_param('_typeAlister', '"S"', TRUE );
+
+
+
+
+
+
+?>

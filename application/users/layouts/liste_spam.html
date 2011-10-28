@@ -1,0 +1,23 @@
+<script type="text/javascript"  src="/scripts/users/liste_spams.js" ></script>
+<table>
+
+    <tr class="entete">
+        <td><b>Time</b></td>
+        <td><b>Note</b></td>
+        <td><b>De</b></td>
+        <td><b>Sujet</b></td>
+        <td><b>Libérer</b></td>
+    </tr>
+
+    {foreach from=$spam item=sp}
+    <tr>
+        <td width="160px">{$sp.time_iso}</td>
+        <td>{$sp.spam_level}</td>
+        <td>{$sp.from_addr}</td>
+        <td>{$sp.subject}</td>
+        <td><div id="{$sp.mail_id}" class="release" onclick="release_email('{$sp.mail_id}')"></div></td>
+    </tr>
+    {/foreach}
+
+</table>
+

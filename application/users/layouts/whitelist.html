@@ -1,0 +1,39 @@
+<link rel="stylesheet"  href="/styles/users/wblist.css" media="Screen"/>
+<script type="text/javascript" src="/scripts/users/wblist.js" ></script>
+
+{if $noform == FALSE}
+<div id="formajout">
+    <table>
+        <tr>
+            <td><input type="text" name="email" id="email" size="55"/></td>
+            <td><img src="/images/add.png" alt="ajouter" title="ajouter" id="addwlist" class="buttonAdd"/></td>
+        </tr>
+    </table>
+</div>
+
+
+<div id="wlist">
+{/if}
+    <table>
+        <tr class="entete">
+            <td width="200px">Adresses en WhiteList</td>
+            <td width="200px">Retirer de la liste</td>
+        </tr>
+
+        {foreach from=$twliste item=adresse}
+        <tr>
+            <td>{$adresse.email}</td>
+            <td><div class="delete" onclick="delete_wb_mail({$adresse.sid},'wl')"></div></td>
+        </tr>
+        {/foreach}
+
+    </table>
+{if $noform == FALSE}
+</div>
+{/if}
+
+<script type="text/javascript">
+
+    Event.observe('addwlist', 'click', AjouteEnWhiteListe );
+
+</script>
