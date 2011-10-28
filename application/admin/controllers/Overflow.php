@@ -1,13 +1,8 @@
 <?php
-/* 
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
  * Description of Overflow
  *
- * @author cdsl
+ * @author christophe de saint leger
  */
 class Overflow extends Oscar_Front_Controller{
 

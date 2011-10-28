@@ -2,11 +2,13 @@
 
 /*
  * DDB
+ * Gestion des libérations à lancer ( tâche cron )
+ * @author christophe de saint leger
  */
 
 require_once('oscar/orm/Oscar_db_manager.php');
 
-require_once '../../config/cronjeob_config.php';
+require_once '../../config/cronjob_config.php';
 
 $dsn	=	"mysql:host=$_host;dbname=$_ddb";
 

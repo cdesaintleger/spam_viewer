@@ -1,0 +1,20 @@
+1// Set DB params
+
+Edit :
+
+----> application/config/cronjob_config.php
+----> application/config/my_config.php
+
+set db access , emails parameters and spams
+
+
+2// Edit Crontab ( user root )
+
+crontab -e
+
+Add :
+
+*/2 * * * * /usr/bin/php /spam_viewer_directory/application/admin/controllers/remote_Overflow.php > /dev/null
+
+
+
