@@ -37,6 +37,8 @@ class M_msgs extends Oscar_Orm{
         $sql    =   '
         SELECT
             msgs.mail_id,
+            msgs.secret_id,
+            msgs.quar_type,
             msgs.time_iso,
             msgs.quar_loc,
             msgs.spam_level,
