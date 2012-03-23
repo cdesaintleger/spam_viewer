@@ -4,8 +4,6 @@ class Spam extends Oscar_Front_Controller{
     
     public function release(){
         
-        $this->stop_layout();
-        
         if( $this->isRegistered('id') ){
             
             if( $this->id != "" ){
