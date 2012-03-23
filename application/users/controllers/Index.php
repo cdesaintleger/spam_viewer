@@ -229,7 +229,7 @@ class Index extends Oscar_Front_Controller{
         if( $this->CPOST_id_mail != null ){
 
             //Récupére les infos du mail à débloquer
-            //$M_spam =   new M_msgs();
+            $M_spam =   new M_msgs();
 
             $Tinfos =   $M_spam->get_infos( $_POST['id_mail'] );
             
