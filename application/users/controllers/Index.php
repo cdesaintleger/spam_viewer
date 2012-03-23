@@ -14,11 +14,15 @@ class Index extends Oscar_Front_Controller{
 
 
     function testAuth(){
+        
+        if( $this->get_url_controller != 'Spam' && $this->get_url_action() != "release" ){
 
-        if( !$this->is_auth() && $this->get_url_action() != "auth"  &&  $this->get_url_action() != "infos_spam" ){
-
-            $this->_skipTo(array("Index","form_auth",null), TRUE);
-
+            if( !$this->is_auth() && $this->get_url_action() != "auth"  &&  $this->get_url_action() != "infos_spam" ){
+    
+                $this->_skipTo(array("Index","form_auth",null), TRUE);
+    
+            }
+            
         }
         
     }
