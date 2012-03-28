@@ -171,6 +171,23 @@ class Index extends Oscar_Front_Controller{
                 /* TEMP */
                 $_SESSION['mail']   =   $this->CPOST_adresse;
                 $_SESSION['spam_viewer_ia'] =   sha1('is_authentified-'.$this->CPOST_adresse);
+                
+                //Chargement des paramétres utilisateur en session
+                $M_users    =   new M_users();
+                
+                //Si c'est la premiere connexion ,
+                if( !$M_users->user_exist($_SESSION['mail']) ){
+                    $M_users->cleanRecord();
+                    $M_users->priority  = 1;
+                    $M_users->policy_id = 1;
+                    $M_users->email     = $_SESSION['mail'];
+                    $M_users->local     = 'Y';
+                    $M_users->exclude    =   0;
+                    $M_users->createRecord();
+                }
+                    
+                $M_users->load_params($_SESSION['mail']);
+                
                 $this->defaut();
                 
                 //$mbox = imap_open ("{".$this->get_param('_mailsrvaddr').":".$this->get_param('_mailsrvport')."/".$this->get_param('_mailsrvflag')."}", $this->CPOST_adresse, $this->CPOST_pwd);
